@@ -1,0 +1,948 @@
+/* --- Fuentes y Variables de Color --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --color-primario: #7C3AED;      /* Morado vibrante */
+    --color-secundario: #A855F7;    /* Púrpura medio */
+    --color-acento: #EC4899;        /* Rosa fucsia */
+    --color-complementario: #06B6D4; /* Cyan para contraste */
+    --color-fondo: #FEFEFF;         /* Blanco casi puro */
+    --color-superficie: #F8FAFF;    /* Blanco con tinte azul muy sutil */
+    --color-superficie-elevada: #F1F5FF; /* Para elementos destacados */
+    --color-texto: #1E293B;         /* Gris muy oscuro para mejor contraste */
+    --color-texto-secundario: #475569; /* Gris medio más oscuro */
+    --color-texto-claro: #64748B;   /* Gris claro más definido */
+    --color-texto-muy-claro: #94A3B8; /* Para elementos sutiles */
+    --sombra-tarjeta: 0 12px 35px rgba(124, 58, 237, 0.25);
+    --sombra-suave: 0 6px 20px rgba(168, 85, 247, 0.15);
+    --sombra-intensa: 0 20px 50px rgba(124, 58, 237, 0.3);
+    --gradiente-principal: linear-gradient(135deg, #7C3AED 0%, #A855F7 50%, #EC4899 100%);
+    --gradiente-suave: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(168, 85, 247, 0.08) 50%, rgba(236, 72, 153, 0.1) 100%);
+}
+  /* Estilos específicos para la sección de certificados */
+    .certificates-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .certificate-card {
+      background: var(--color-superficie);
+      border-radius: 25px;
+      padding: 30px;
+      border: 2px solid rgba(124, 58, 237, 0.1);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 8px 25px rgba(124, 58, 237, 0.08);
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    /* Efecto de gradiente en el borde al hover */
+    .certificate-card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: var(--gradiente-principal);
+      border-radius: 25px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .certificate-card:hover {
+      transform: translateY(-15px) scale(1.03);
+      box-shadow: var(--sombra-intensa);
+      background: var(--color-superficie-elevada);
+    }
+
+    .certificate-card:hover::before {
+      opacity: 1;
+    }
+
+    .certificate-icon {
+      background: var(--gradiente-principal);
+      color: white;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .certificate-icon::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: shine-icon 3s linear infinite;
+    }
+
+    @keyframes shine-icon {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+  /* Estilos específicos para la sección de certificados */
+    .certificates-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .certificate-card {
+      background: var(--color-superficie);
+      border-radius: 25px;
+      padding: 30px;
+      border: 2px solid rgba(124, 58, 237, 0.1);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 8px 25px rgba(124, 58, 237, 0.08);
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    /* Efecto de gradiente en el borde al hover */
+    .certificate-card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: var(--gradiente-principal);
+      border-radius: 25px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .certificate-card:hover {
+      transform: translateY(-15px) scale(1.03);
+      box-shadow: var(--sombra-intensa);
+      background: var(--color-superficie-elevada);
+    }
+
+    .certificate-card:hover::before {
+      opacity: 1;
+    }
+
+    .certificate-icon {
+      background: var(--gradiente-principal);
+      color: white;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+      box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .certificate-icon::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: shine-icon 3s linear infinite;
+    }
+
+    @keyframes shine-icon {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+
+    .certificate-content h3 {
+      color: var(--color-primario);
+      margin: 0 0 10px 0;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .certificate-institution {
+      color: var(--color-secundario);
+      font-weight: 600;
+      margin: 0 0 5px 0;
+      font-size: 0.95rem;
+    }
+
+    .certificate-date {
+      color: var(--color-texto-claro);
+      font-size: 0.85rem;
+      margin: 0 0 15px 0;
+      font-style: italic;
+      background: rgba(124, 58, 237, 0.1);
+      padding: 3px 8px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .certificate-description {
+      color: var(--color-texto-secundario);
+      line-height: 1.6;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    /* Animación para cards de certificados */
+    .fade-in.visible .certificate-card {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive para certificados */
+    @media (max-width: 768px) {
+      .certificates-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .certificate-card {
+        padding: 25px;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+      
+      .certificate-icon {
+        align-self: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .certificate-card {
+        padding: 20px;
+      }
+      
+      .certificate-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.4rem;
+      }
+    }
+
+    .certificate-content h3 {
+      color: var(--color-primario);
+      margin: 0 0 10px 0;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .certificate-institution {
+      color: var(--color-secundario);
+      font-weight: 600;
+      margin: 0 0 5px 0;
+      font-size: 0.95rem;
+    }
+
+    .certificate-date {
+      color: var(--color-texto-claro);
+      font-size: 0.85rem;
+      margin: 0 0 15px 0;
+      font-style: italic;
+      background: rgba(124, 58, 237, 0.1);
+      padding: 3px 8px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .certificate-description {
+      color: var(--color-texto-secundario);
+      line-height: 1.6;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    /* Animación para cards de certificados */
+    .fade-in.visible .certificate-card {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive para certificados */
+    @media (max-width: 768px) {
+      .certificates-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .certificate-card {
+        padding: 25px;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+      
+      .certificate-icon {
+        align-self: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .certificate-card {
+        padding: 20px;
+      }
+      
+      .certificate-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.4rem;
+      }
+    }
+
+/* --- Estilos Generales y Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: var(--color-texto);
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primario);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-secundario);
+}
+
+section {
+    padding: 80px 10%;
+    border-bottom: 1px solid rgba(180, 167, 255, 0.1);
+}
+
+/* --- Header y Navegación --- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: rgba(248, 250, 255, 0.98);
+    backdrop-filter: blur(20px);
+    border-bottom: 2px solid rgba(124, 58, 237, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    box-shadow: var(--sombra-suave);
+    background: rgba(248, 250, 255, 1);
+    border-bottom: 2px solid rgba(124, 58, 237, 0.2);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: var(--gradiente-principal);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+}
+
+/* Efecto de brillo en el logo */
+header h1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+}
+
+header nav a {
+    margin-left: 25px;
+    font-weight: 400;
+    position: relative;
+    padding-bottom: 5px;
+    color: var(--color-texto-secundario);
+}
+
+/* Efecto de línea bajo los enlaces del nav */
+header nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--gradiente-principal);
+    border-radius: 2px;
+    transition: width 0.4s ease-out;
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+
+header nav a:hover {
+    color: var(--color-primario);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* --- Hero Section --- */
+/* --- Hero Section mejorada --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    background: var(--gradiente-suave);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: var(--color-texto-claro);
+    margin: 15px 0 30px 0;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+/* Elementos decorativos de fondo */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 60%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -20%;
+    width: 50%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+/* Elementos decorativos de fondo */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 60%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -20%;
+    width: 50%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.hero-text h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--color-texto);
+    animation: slideInFromLeft 1s ease-out forwards;
+}
+
+/* Animación de degradado para el nombre */
+.hero-text h2 span {
+    background: var(--gradiente-principal);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    display: inline-block;
+}
+
+/* Efecto de pulso en el nombre */
+.hero-text h2 span::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradiente-principal);
+    -webkit-background-clip: text;
+    background-clip: text;
+    opacity: 0;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(1.05); }
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    color: var(--color-texto-secundario);
+    animation: slideInFromLeft 1s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: var(--gradiente-principal);
+    color: white;
+    border-radius: 50px;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    animation: slideInFromLeft 1s ease-out 0.4s forwards;
+    opacity: 0;
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
+    border: 2px solid transparent;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: var(--sombra-intensa);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+/* --- Secciones y Tarjetas --- */
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    background: var(--gradiente-principal);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+}
+
+/* Línea decorativa bajo los títulos */
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--gradiente-principal);
+    border-radius: 2px;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--color-superficie);
+    padding: 35px;
+    border-radius: 25px;
+    border: 2px solid rgba(124, 58, 237, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.08);
+}
+
+/* Efecto de gradiente en el borde al hover */
+.card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradiente-principal);
+    border-radius: 25px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: var(--sombra-intensa);
+    background: var(--color-superficie-elevada);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: var(--color-primario);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.card p {
+    color: var(--color-texto-secundario);
+    line-height: 1.7;
+}
+
+/* --- Listas (Experiencia y Hobbies) --- */
+#experiencia ul, #hobbies ul {
+    list-style: none;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- Experiencia y listas mejoradas --- */
+#experiencia ul, #hobbies ul {
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#experiencia li, #hobbies li {
+    background: var(--color-superficie);
+    margin-bottom: 25px;
+    padding: 30px;
+    border-radius: 20px;
+    border-left: 6px solid var(--color-acento);
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(124, 58, 237, 0.08);
+}
+
+/* Efecto de gradiente sutil en el fondo */
+#experiencia li::before, #hobbies li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.03));
+    border-radius: 0 20px 20px 0;
+}
+
+#experiencia li:hover, #hobbies li:hover {
+    transform: translateX(15px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(236, 72, 153, 0.15);
+    border-left-color: var(--color-primario);
+    background: var(--color-superficie-elevada);
+}
+
+/* Alternancia de colores en los bordes */
+#experiencia li:nth-child(even), #hobbies li:nth-child(even) {
+    border-left-color: var(--color-complementario);
+}
+
+#experiencia li:nth-child(even):hover, #hobbies li:nth-child(even):hover {
+    border-left-color: var(--color-secundario);
+}
+
+/* Estilos específicos para experiencia */
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.experience-header strong {
+    color: var(--color-primario);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.year {
+    background: var(--gradiente-principal);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.tech-tags span {
+    background: rgba(124, 58, 237, 0.1);
+    color: var(--color-primario);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    transition: all 0.3s ease;
+}
+
+.tech-tags span:hover {
+    background: var(--color-primario);
+    color: white;
+    transform: translateY(-2px);
+}
+
+#experiencia li p {
+    color: var(--color-texto-secundario);
+    margin: 10px 0;
+    line-height: 1.6;
+}
+.btn-cv {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #0077ff, #00d4ff);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-cv i {
+  margin-right: 8px;
+}
+
+.btn-cv:hover {
+  background: linear-gradient(135deg, #00d4ff, #0077ff);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(255, 255, 255, 0.3);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 40px 10%;
+    background: var(--color-superficie);
+    border-top: 1px solid rgba(180, 167, 255, 0.15);
+}
+
+footer p {
+    color: var(--color-texto-claro);
+}
+
+.social-links a {
+    font-size: 2rem;
+    margin: 0 15px;
+    color: var(--color-texto-claro);
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+/* Círculo decorativo de fondo */
+.social-links a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 60px;
+    height: 60px;
+    background: var(--gradiente-principal);
+    border-radius: 50%;
+    opacity: 0.1;
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.social-links a:hover {
+    color: white;
+    transform: translateY(-10px) scale(1.1);
+}
+
+.social-links a:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* --- Animaciones --- */
+
+/* Animación para el texto del Hero */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animación para las secciones al hacer scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .hero-text h2 {
+        font-size: 2.5rem;
+    }
+    
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .year {
+        align-self: flex-start;
+    }
+    
+    section {
+        padding: 60px 5%;
+    }
+    
+    header {
+        padding: 15px 5%;
+    }
+    
+    .projects {
+        grid-template-columns: 1fr;
+    }
+    
+    .tech-tags {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h2 {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+    
+    #experiencia li, #hobbies li {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .experience-header strong {
+        font-size: 1.1rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+}
